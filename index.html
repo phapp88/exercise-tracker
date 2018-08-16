@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise Tracker</title>
+  </head>
+  <body>
+    <h1>Exercise Tracker</h1>
+    <form action="/api/exercise/new-user" method="POST">
+      <p>Create a new user</p>
+      <p>POST /api/exercise/new-user</p>
+      <input type="text" name="username" placeholder="username">
+      <button>Submit</button>
+    </form>
+    <form action="/api/exercise/add" method="POST">
+      <p>Add an exercise</p>
+      <p>POST /api/exercise/add</p>
+      <input type="text" name="userId" placeholder="userId*" required>
+      <input type="text" name="description" placeholder="description*" required>
+      <input type="text" name="duration" placeholder="duration (min)*" required>
+      <input type="text" name="date" placeholder="date (yyyy-mm-dd)">
+      <button>Submit</button>
+    </form>
+    <p>GET user's exercise log: GET /api/exercise/log?{userId}[&from][&to][&limit]</p>
+    <p>{} = required, [] = optional</p>
+    <p>from, to = dates (yyyy-mm-dd); limit = number</p>
+  </body>
+</html>
