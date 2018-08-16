@@ -23,6 +23,7 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model('users', UserSchema);
 
 express()
+  .use(express.static('public'))
   .use(bodyParser.urlencoded({ extended: false }))
   .get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')))
   .get('/api/exercise/log', (req, res, next) => {

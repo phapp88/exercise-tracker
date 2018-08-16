@@ -3,26 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title>Exercise Tracker</title>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <h1>Exercise Tracker</h1>
-    <form action="/api/exercise/new-user" method="POST">
-      <p>Create a new user</p>
-      <p>POST /api/exercise/new-user</p>
-      <input type="text" name="username" placeholder="username">
-      <button>Submit</button>
-    </form>
-    <form action="/api/exercise/add" method="POST">
-      <p>Add an exercise</p>
-      <p>POST /api/exercise/add</p>
-      <input type="text" name="username" placeholder="username*" required>
-      <input type="text" name="description" placeholder="description*" required>
-      <input type="text" name="duration" placeholder="duration (min)*" required>
-      <input type="text" name="date" placeholder="date (yyyy-mm-dd)">
-      <button>Submit</button>
-    </form>
-    <p>GET user's exercise log: GET /api/exercise/log?{username}[&from][&to][&limit]</p>
-    <p>{} = required, [] = optional</p>
-    <p>from, to = dates (yyyy-mm-dd); limit = number</p>
+    <div class="forms">
+      <form action="/api/exercise/new-user" method="POST">
+        <p class="form-title">Create a new user</p>
+        <p><span class="route">POST /api/exercise/new-user</span></p>
+        <input type="text" name="username" placeholder="username*" required>
+        <button>Submit</button>
+      </form>
+      <form action="/api/exercise/add" method="POST">
+        <p class="form-title">Add an exercise</p>
+        <p><span class="route">POST /api/exercise/add</span></p>
+        <input type="text" name="username" placeholder="username*" required>
+        <input type="text" name="description" placeholder="description*" required>
+        <input type="text" name="duration" placeholder="duration (min)*" required>
+        <input type="text" name="date" placeholder="date (yyyy-mm-dd)">
+        <button>Submit</button>
+      </form>
+    </div>
+    <p><span class="span--bold">GET user's exercise log: </span><span class="route">GET /api/exercise/log?{username}[&from][&to][&limit]</span></p>
+    <p><span class="span--bold">{ }</span> = required, <span class="span--bold">[ ]</span> = optional</p>
+    <p><span class="span--bold">from, to</span> = dates (yyyy-mm-dd); <span class="span--bold">limit</span> = number</p>
   </body>
 </html>
